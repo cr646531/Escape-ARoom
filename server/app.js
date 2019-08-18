@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const jwt = require('jwt-simple');
 const env = require('dotenv');
-const socketio = require('socket.io');
 
 // instantiate express
 const app = express();
@@ -23,8 +22,7 @@ const apiCaptain = require('./api/captains');
 const apiGame = require('./api/games');
 const apiAuth = require('./api/auth');
 
-// ### MIDDLEWARE ###
-// body parser
+// middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -73,12 +71,12 @@ app.use((req, res, next) => {
 const index = path.join(__dirname, '..', 'public', 'index.html');
 const pageNotFound = path.join(__dirname, '..', 'public', '404.html');
 
-// ### MAIN ROUTES ###
+// main route
 app.get('/', (req, res, next) => {
   res.sendFile(index);
 });
 
-// ### ERROR HANDLING ###
+// error handling
 app.use((req, res, next) => {
   res.status(404).sendFile(pageNotFound);
 });

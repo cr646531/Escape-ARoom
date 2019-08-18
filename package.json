@@ -1,6 +1,6 @@
 {
-  "name": "escape-ar",
-  "version": "1.0.0",
+  "name": "Escape-ARoom",
+  "version": "2.0.0",
   "description": "",
   "main": "server/server.js",
   "scripts": {
@@ -37,12 +37,10 @@
     "express": "^4.16.3",
     "file-loader": "^2.0.0",
     "image-webpack-loader": "^4.5.0",
-    "jquery": "^3.3.1",
     "jwt-simple": "^0.5.5",
     "moment": "^2.22.2",
     "nodemon": "^1.18.7",
     "pg": "^7.7.1",
-    "popper.js": "^1.14.6",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-redux": "^5.1.1",
