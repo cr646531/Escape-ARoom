@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 import Sound from 'react-sound';
 
-import Leaderboard from './Leaderboard';
-import { beatTheGame } from '../store';
+import Leaderboard from '../User/Leaderboard';
+import { beatTheGame } from '../../store';
 
 class Escaped extends Component {
   constructor(){

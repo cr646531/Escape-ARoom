@@ -1,7 +1,7 @@
 import React from 'react';
 import Sound from 'react-sound';
 
-export default class Opening extends React.Component {
+export default class TestRain extends React.Component {
     render() {
         return (
           <div>

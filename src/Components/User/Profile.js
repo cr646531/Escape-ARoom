@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { updateUser } from '../store';
+import { updateUser } from '../../store';
 
 class Profile extends Component {
   constructor() {

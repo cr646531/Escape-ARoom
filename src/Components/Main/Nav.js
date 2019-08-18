@@ -5,11 +5,11 @@ const Nav = ({ auth }) => {
   return (
     <div className="header-container">
       <div className="header-item">
-        <h1 className="game-title">Escape <b style={{"color": "red"}}>AR</b>oom</h1>
+        <h1 className="game-title">Escape <b style={ {"color": "red"} }>AR</b>oom</h1>
         <p className="sub-title">An Augmented Reality Experience</p>
       </div>
     </div>
-  )
+  );
 }
 
 const mapStateToProps = (state) => ({

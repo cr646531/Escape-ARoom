@@ -2,13 +2,13 @@ import React from 'react';
 import { HashRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import Nav from './Nav';
+import Nav from '../Main/Nav';
 import JoinTeam from './JoinTeam';
 import CreateTeam from './CreateTeam';
 import Invite from './Invite';
 import Profile from './Profile';
 
-import { logout } from '../store';
+import { logout } from '../../store';
 
 
 const Account = ({ auth, logout }) => {

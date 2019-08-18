@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 
-import { joinTeam } from '../store';
+import { joinTeam } from '../../store';
 
 class JoinTeam extends Component {
   constructor() {

@@ -1,15 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Lock from './Lock';
-import Clock from './Clock';
-import Letter from './Letter';
+import React, { Component } from 'react';
 import Sound from 'react-sound';
+
+//Utilities
+import Lock from '../Utilities/Lock';
+import Clock from '../Utilities/Clock';
+import Letter from '../Utilities/Letter';
+import Stopwatch from '../Utilities/Stopwatch';
+import Inventory from '../Utilities/Inventory';
+
 import Escaped from './Escaped';
-import Inventory from './Inventory';
-import Stopwatch from './Stopwatch';
 
 
-export default class Testing extends React.Component {
+export default class Interface extends Component {
   constructor(){
     super();
     this.state = {
@@ -21,12 +23,13 @@ export default class Testing extends React.Component {
       showLock: false,
       showLetter: false,
       showDoor: false,
+      flag: false,
+      //--------Sound Effects-------//
       knock: false,
       bang: false,
       squeak: false,
       creak: false,
-      snap: false,
-      flag: false
+      snap: false
     };
     this.stopKnock = this.stopKnock.bind(this);
     this.stopBang = this.stopBang.bind(this);
@@ -68,28 +71,38 @@ export default class Testing extends React.Component {
 
           {/* ----- Components ----- */}
 
-          {showClock && (
-            <div>
-              <Clock />
-              { !pick && <button className="welcome-btn" onClick={this.checkBehind}>Check behind the clock</button> }
-              <button onClick={()=> this.setState({ showClock: false }) } >x</button>
-            </div>
-          )}
+          {/* Clock */}
+          { 
+            showClock && (
+              <div>
+                <Clock />
+                { !pick && <button className="welcome-btn" onClick={this.checkBehind}>Check behind the clock</button> }
+                <button onClick={()=> this.setState({ showClock: false }) } >x</button>
+              </div>
+            ) 
+          }
 
-          {showLock && (
-            <div>
-              <Lock receiveKey={this.receiveKey}/>
-              <button onClick={()=> this.setState({ showLock: false }) } >x</button>
-            </div>
-          )}
+          {/* Lock */}
+          {
+            showLock && (
+              <div>
+                <Lock receiveKey={this.receiveKey}/>
+                <button onClick={()=> this.setState({ showLock: false }) } >x</button>
+              </div>
+            ) 
+          }
 
-          {showLetter && (
-            <div>
-              <Letter />
-              <button onClick={()=> this.setState({ showLetter: false }) } >x</button>
-            </div>
-          )}
+          {/* Letter */}
+          {
+            showLetter && (
+              <div>
+                <Letter />
+                <button onClick={()=> this.setState({ showLetter: false }) } >x</button>
+              </div>
+            )
+          }
 
+          {/* Door */}
           {showDoor && (
             <div>
               <br />
@@ -106,7 +119,9 @@ export default class Testing extends React.Component {
 
               { pick && <button className="welcome-btn" onClick={ this.pickLock }>Pick</button> }
               { key && <button className="welcome-btn" onClick={()=> this.setState({ open: true }) }>Open the door</button> }
+
               <button onClick={()=> this.setState({ showDoor: false }) } >x</button>
+
               <br />
             </div>
           )}

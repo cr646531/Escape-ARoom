@@ -16,13 +16,16 @@ h1 {
   background-image: url('http://i64.tinypic.com/2d8j0pi.jpg');
 
   /* Full height */
-  height: 100vh;
-  min-height: 100vh;
+  /*
+    height: 100vh;
+    min-height: 100vh;
+  */
 
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: scroll;
 }
 
 a {
