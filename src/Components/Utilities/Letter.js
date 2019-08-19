@@ -5,13 +5,15 @@ export default class Letter extends React.Component {
 
   constructor(){
     super();
+
     this.state = {
       play: true
     };
+
     this.stopPlayingSound = this.stopPlayingSound.bind(this);
   }
 
-  stopPlayingSound(){
+  stopPlayingSound() {
     this.setState({
       play: false
     })
@@ -20,14 +22,20 @@ export default class Letter extends React.Component {
   render() {
     return (
       <div>
+
+        {/* Display letter */}
         <img src="letter.png" />
-        {this.state.play && (
-          <Sound
+
+        {/* Play the 'letter.mp3' sound effect */}
+        {
+          this.state.play && (
+            <Sound
               url={'letter.mp3'}
               playStatus={Sound.status.PLAYING}
               onFinishedPlaying={this.stopPlayingSound}
             />
-        )}
+        )
+        }
       </div>
     )
   }

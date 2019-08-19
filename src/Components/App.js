@@ -13,7 +13,6 @@ import Escaped from './Gameplay/Escaped';
 //Utilities
 import Clock from './Utilities/Clock';
 import Lock from './Utilities/Lock';
-import Envelope from './Utilities/Envelope';
 import Letter from './Utilities/Letter';
 
 //Account creation
@@ -67,7 +66,6 @@ class App extends Component {
           {/* Utilities */}
           <Route exact path="/room/clock" component={Clock} />
           <Route exact path="/room/lock" component={Lock} />
-          <Route exact path="/room/envelope" component={Envelope} />
           <Route exact path="/room/letter" component={Letter} />
           <Route exact path="/escaped" component={Escaped} />
 
