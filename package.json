@@ -8,7 +8,7 @@
     "test:dev": "npm run test -- --watch",
     "postinstall": "npm run webpack",
     "webpack": "webpack",
-    "build": "npm run webpack -- --watch --mode=development",
+    "build": "npm run webpack",
     "start:dev": "npm run build & DATABASE_URL=postgres://localhost/escapeAR_dev nodemon server/server.js --ignore dist --ignore src",
     "start": "node server/server.js"
   },
