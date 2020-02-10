@@ -11,23 +11,6 @@ h1 {
   margin: 0;
 }
 
-.background {
-  /* The image used */
-  background-image: url('http://i64.tinypic.com/2d8j0pi.jpg');
-
-  /* Full height */
-  /*
-    height: 100vh;
-    min-height: 100vh;
-  */
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: scroll;
-}
-
 a {
   color: white;
   font-weight: bold;

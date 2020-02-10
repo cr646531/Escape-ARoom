@@ -13,21 +13,21 @@ export default class Home extends Component {
 
     //the state controls the rain sound effect
     this.state = {
-      rain: true
+      music: true
     };
 
-    this.stopRain = this.stopRain.bind(this);
-    this.startRain = this.startRain.bind(this);
+    this.stopMusic = this.stopMusic.bind(this);
+    this.startMusic = this.startMusic.bind(this);
   }
 
   //function to stop the rain sound
-  stopRain() { 
-    this.setState({ rain: false }) 
+  stopMusic() { 
+    this.setState({ music: false }) 
   }
 
   //function to start the rain sound
-  startRain() { 
-    this.setState({ rain: true }) 
+  startMusic() { 
+    this.setState({ music: true }) 
   }
 
   render(){
@@ -50,17 +50,12 @@ export default class Home extends Component {
               <Link to='/instructions' ><button className="welcome-btn">Instructions</button></Link>
             </div>
 
-            {/* Account Button */}
-            <div className="button-grid-item">
-              <Link to='/account' ><button className="welcome-btn">Account</button></Link>
-            </div>
-
             {/* Button used to mute the rain sound effect */}
             {
               //if rain is set to true within the state, display the mute button
-              this.state.rain && (
+              this.state.music && (
                 <div className="button-grid-item">
-                  <button className="welcome-btn" onClick={this.stopRain}>Mute</button>
+                  <button className="welcome-btn" onClick={this.stopMusic}>Mute</button>
                 </div>
               )
             }
@@ -68,16 +63,16 @@ export default class Home extends Component {
             {/* Button used to unmute the rain sound effect */}
             { 
               //if rain is set to false within the state, display the unmute button
-              !this.state.rain && (
+              !this.state.music && (
                 <div className="button-grid-item">
-                  <button className="welcome-btn" onClick={this.startRain}>Unmute</button>
+                  <button className="welcome-btn" onClick={this.startMusic}>Unmute</button>
                 </div>
               )
             }
 
             { 
               //if rain is set to true within the state, play the rain sound effect
-              this.state.rain && <Sound url={'rain.mp3'} playStatus={Sound.status.PLAYING} onFinishedPlaying={this.stopRain} /> 
+              this.state.music && <Sound url={'music.mp3'} playStatus={Sound.status.PLAYING} onFinishedPlaying={this.stopMusic} /> 
             }
 
           </div>

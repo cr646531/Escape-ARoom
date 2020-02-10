@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import Sound from 'react-sound';
 
-import Leaderboard from '../User/Leaderboard';
 import { beatTheGame } from '../../store';
 
 class Escaped extends Component {
@@ -37,13 +35,6 @@ class Escaped extends Component {
         <div id="escaped-container">
           <h2>Congratulations!</h2>
           <h3>You escaped in <br /> {timeElapsed.minutes()} min and {timeElapsed.seconds()} sec.</h3>
-          <div>Your time ranks:
-            <br/>
-            <b style={{"color": "red"}}>{games.findIndex(game => game.id === activeGame.id) + 1}</b> out of {games.length}
-            <br />
-            escapes this week!</div>
-          <br />
-          <Leaderboard games={games}/>
           <br />
           <br />
           <br />
